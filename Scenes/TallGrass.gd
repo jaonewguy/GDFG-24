@@ -33,3 +33,12 @@ var player_inside: bool = false
 
 func _on_Area2D_body_entered(body: Node) -> void:
     anim_player.play("Stepped")
+    
+    var grass_step_effect = GrassStepEffect.instance()
+    grass_step_effect.position = self.position
+    get_tree().current_scene.add_child(grass_step_effect)
+
+#
+#func _on_Area2D_body_exited(body: Node) -> void:
+#    if is_instance_valid(grass_overlay):
+#        grass_overlay.queue_free()

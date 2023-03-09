@@ -30,3 +30,5 @@ animations = [ {
 [node name="GrassStepEffect" type="AnimatedSprite"]
 frames = SubResource( 1 )
 script = ExtResource( 1 )
+
+[connection signal="animation_finished" from="." to="." method="_on_GrassStepEffect_animation_finished"]
