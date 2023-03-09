@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Assets/player/adventurer_sprite_sheet_v1.1.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
@@ -9,7 +9,7 @@ height = 6.0
 
 [sub_resource type="Animation" id=4]
 resource_name = "Attack1"
-loop = true
+length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -17,7 +17,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 39, 48 ]
@@ -25,7 +25,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=5]
 resource_name = "Attack2"
-loop = true
+length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -33,7 +33,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 52, 61 ]
@@ -73,7 +73,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=6]
 resource_name = "Run"
-length = 1.5
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -82,11 +81,57 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.5 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 13, 20 ]
 }
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "Attack1"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "Attack2"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "Run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+
+[sub_resource type="AnimationNodeStateMachine" id=19]
+states/Attack1/node = SubResource( 7 )
+states/Attack1/position = Vector2( 568, 333 )
+states/Attack2/node = SubResource( 8 )
+states/Attack2/position = Vector2( 562, 161 )
+states/Idle/node = SubResource( 9 )
+states/Idle/position = Vector2( 903, 226 )
+states/Run/node = SubResource( 10 )
+states/Run/position = Vector2( 903, 66 )
+transitions = [ "Idle", "Attack1", SubResource( 11 ), "Attack2", "Idle", SubResource( 12 ), "Idle", "Run", SubResource( 13 ), "Run", "Idle", SubResource( 14 ), "Run", "Attack2", SubResource( 15 ), "Attack1", "Idle", SubResource( 16 ), "Idle", "Attack2", SubResource( 17 ), "Run", "Attack1", SubResource( 18 ) ]
+start_node = "Idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=20]
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -106,3 +151,9 @@ anims/Attack2 = SubResource( 5 )
 anims/Idle = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 anims/Run = SubResource( 6 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 19 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 20 )
