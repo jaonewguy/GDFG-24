@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://GrassStepEffect.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/GrassStepEffect.gd" type="Script" id=1]
 [ext_resource path="res://Assets/grass/grass_step_animation.png" type="Texture" id=2]
 
 [sub_resource type="AtlasTexture" id=2]
