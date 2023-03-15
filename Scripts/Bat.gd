@@ -1,4 +1,4 @@
-extends KinematicBody2D
+class_name Bat extends KinematicBody2D
 
 export var ACCELERATION = 300
 export var MAX_SPEED = 50
@@ -14,7 +14,7 @@ enum {
 var velocity = Vector2.ZERO
 var state = IDLE
 
-onready var sprite = $AnimatedSprite
+onready var batSprite = $Sprites/EnemySprite
 onready var playerDetectionZone = $PlayerDetectionZone
 onready var wanderController = $WanderController
 
@@ -50,7 +50,7 @@ func accelerate_towards_point(point, delta):
     var direction = global_position.direction_to(point)
 #    print("Direction:", direction)
     velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * delta)
-    sprite.flip_h = velocity.x < 0
+    batSprite.flip_h = velocity.x < 0
 
 func pick_random_state(state_list):
     state_list.shuffle()

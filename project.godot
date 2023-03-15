@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Bat",
+"language": "GDScript",
+"path": "res://Scripts/Bat.gd"
+} ]
+_global_script_class_icons={
+"Bat": ""
+}
+
 [application]
 
 config/name="GDFG_24"
@@ -65,4 +75,5 @@ common/enable_pause_aware_picking=true
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"

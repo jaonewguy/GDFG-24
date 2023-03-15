@@ -1,9 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Assets/enemy/Bat.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/PlayerDetection.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Bat.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/WanderController.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/lights/basic_circle_linear.png" type="Texture" id=5]
+[ext_resource path="res://Assets/lights/basic_circle.png" type="Texture" id=6]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -41,17 +43,34 @@ radius = 54.0093
 
 [node name="Bat" type="KinematicBody2D"]
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="OnlyDarkSprite" type="Sprite" parent="Sprites"]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 1.19209e-07, 0.5 )
+scale = Vector2( 0.28125, 0.296875 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="EnemySprite" type="AnimatedSprite" parent="Sprites"]
+visible = false
+show_behind_parent = true
 frames = SubResource( 6 )
 animation = "Fly"
-frame = 3
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 7 )
 
 [node name="PlayerDetectionZone" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 2
 script = ExtResource( 2 )
@@ -60,6 +79,11 @@ script = ExtResource( 2 )
 shape = SubResource( 8 )
 
 [node name="WanderController" parent="." instance=ExtResource( 4 )]
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 5 )
+color = Color( 0.721569, 0.00392157, 0.00392157, 1 )
+energy = 0.4
 
 [connection signal="body_entered" from="PlayerDetectionZone" to="PlayerDetectionZone" method="_on_PlayerDetectionZone_body_entered"]
 [connection signal="body_exited" from="PlayerDetectionZone" to="PlayerDetectionZone" method="_on_PlayerDetectionZone_body_exited"]

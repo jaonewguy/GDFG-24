@@ -43,3 +43,14 @@ func get_input() -> void:
 #func die():
 #    state_machine.travel("die")
 #    set_physics_process(false)
+
+
+func _on_Area2D_body_entered(body: Node) -> void:
+    if body is Bat:
+        body.get_node("Sprites/OnlyDarkSprite").hide()
+        body.get_node("Sprites/EnemySprite").show()
+
+func _on_Area2D_body_exited(body: Node) -> void:
+    if body is Bat:
+        body.get_node("Sprites/OnlyDarkSprite").show()
+        body.get_node("Sprites/EnemySprite").hide()

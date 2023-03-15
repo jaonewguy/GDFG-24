@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Assets/player/adventurer_sprite_sheet_v1.1.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
@@ -137,6 +137,9 @@ start_node = "Idle"
 [sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 4.5, 2 )
 
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 26.25, 24.75 )
+
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2
 script = ExtResource( 2 )
@@ -169,9 +172,18 @@ parameters/playback = SubResource( 20 )
 position = Vector2( -1.5, 4 )
 shape = SubResource( 21 )
 
-[node name="Light2D" type="Light2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2( -2.25, -2.75 )
+shape = SubResource( 22 )
+
+[node name="Light2D" type="Light2D" parent="Area2D"]
 position = Vector2( -2, -3 )
 scale = Vector2( 0.818878, 0.78699 )
 texture = ExtResource( 3 )
-texture_scale = 0.78
 shadow_enabled = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
