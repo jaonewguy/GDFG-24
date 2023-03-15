@@ -22,7 +22,7 @@ func _ready():
     state = pick_random_state([IDLE, WANDER])
     
 func _physics_process(delta: float) -> void:
-    print("State:", state)
+#    print("State:", state)
     match state:
         IDLE:
             velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
@@ -48,7 +48,7 @@ func _physics_process(delta: float) -> void:
 
 func accelerate_towards_point(point, delta):
     var direction = global_position.direction_to(point)
-    print("Direction:", direction)
+#    print("Direction:", direction)
     velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * delta)
     sprite.flip_h = velocity.x < 0
 
@@ -61,6 +61,6 @@ func seek_player():
         state = CHASE
         
 func update_wander():
-    print("Entered update_wander")
+#    print("Entered update_wander")
     state = pick_random_state([IDLE, WANDER])
     wanderController.start_wander_timer(rand_range(1, 3))

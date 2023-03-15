@@ -8,8 +8,6 @@ onready var target_position = global_position
 onready var timer = $Timer
 
 func _ready():
-    print("Bat position")
-    print(self.global_position)
     update_target_position()
 
 func update_target_position():
@@ -19,12 +17,11 @@ func update_target_position():
     print(target_position)
 
 func get_time_left():
-    print("Time left:", timer.time_left)
     return timer.time_left
 
 func start_wander_timer(duration):
-    print("Start wander time:", duration)
     timer.start(duration)
 
 func _on_Timer_timeout():
+#     TODO: Update only during specific state?
     update_target_position()
