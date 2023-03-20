@@ -13,16 +13,26 @@ _global_script_classes=[ {
 "class": "Bat",
 "language": "GDScript",
 "path": "res://Scripts/Bat.gd"
+}, {
+"base": "Area2D",
+"class": "Wood",
+"language": "GDScript",
+"path": "res://Scripts/Wood.gd"
 } ]
 _global_script_class_icons={
-"Bat": ""
+"Bat": "",
+"Wood": ""
 }
 
 [application]
 
 config/name="GDFG_24"
-run/main_scene="res://Scenes/Level.tscn"
+run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+SignalBus="*res://Scripts/SignalBus.gd"
 
 [display]
 
@@ -66,6 +76,13 @@ attack={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Enemy"
+2d_physics/layer_4="Item"
+
 [physics]
 
 common/enable_pause_aware_picking=true
@@ -75,5 +92,4 @@ common/enable_pause_aware_picking=true
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
-environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"

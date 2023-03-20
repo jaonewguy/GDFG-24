@@ -74,6 +74,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=6]
 resource_name = "Run"
+length = 0.5
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -82,7 +83,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 13, 20 ]
@@ -183,6 +184,7 @@ shape = SubResource( 22 )
 position = Vector2( -2, -3 )
 scale = Vector2( 0.818878, 0.78699 )
 texture = ExtResource( 3 )
+energy = 0.75
 shadow_enabled = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

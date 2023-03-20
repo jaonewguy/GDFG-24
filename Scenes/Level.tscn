@@ -1,10 +1,20 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/TallGrass.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Bat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Wood.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=5]
 
-[node name="Level" type="Node"]
+[node name="Level" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="BG" type="Node2D" parent="."]
+
+[node name="Ground" type="ColorRect" parent="BG"]
+margin_right = 426.0
+margin_bottom = 241.0
+color = Color( 0.309804, 0.419608, 0.352941, 1 )
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -61,14 +71,167 @@ position = Vector2( 153, 93 )
 [node name="TallGrass16" parent="YSort/Grasses" instance=ExtResource( 1 )]
 position = Vector2( 153, 106 )
 
+[node name="TallGrass17" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 162, 67 )
+
+[node name="TallGrass18" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 162, 80 )
+
+[node name="TallGrass19" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 176, 67 )
+
+[node name="TallGrass20" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 176, 80 )
+
+[node name="TallGrass21" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 162, 93 )
+
+[node name="TallGrass22" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 162, 106 )
+
+[node name="TallGrass23" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 176, 93 )
+
+[node name="TallGrass24" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 176, 106 )
+
+[node name="TallGrass25" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 190, 67 )
+
+[node name="TallGrass26" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 190, 80 )
+
+[node name="TallGrass27" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 204, 67 )
+
+[node name="TallGrass28" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 204, 80 )
+
+[node name="TallGrass29" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 190, 93 )
+
+[node name="TallGrass30" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 190, 106 )
+
+[node name="TallGrass31" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 204, 93 )
+
+[node name="TallGrass32" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 204, 106 )
+
+[node name="TallGrass33" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 111, 115 )
+
+[node name="TallGrass34" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 111, 128 )
+
+[node name="TallGrass35" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 125, 115 )
+
+[node name="TallGrass36" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 125, 128 )
+
+[node name="TallGrass37" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 111, 141 )
+
+[node name="TallGrass38" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 111, 154 )
+
+[node name="TallGrass39" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 125, 141 )
+
+[node name="TallGrass40" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 125, 154 )
+
+[node name="TallGrass41" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 139, 115 )
+
+[node name="TallGrass42" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 139, 128 )
+
+[node name="TallGrass43" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 153, 115 )
+
+[node name="TallGrass44" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 153, 128 )
+
+[node name="TallGrass45" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 139, 141 )
+
+[node name="TallGrass46" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 139, 154 )
+
+[node name="TallGrass47" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 153, 141 )
+
+[node name="TallGrass48" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 153, 154 )
+
+[node name="TallGrass49" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 162, 115 )
+
+[node name="TallGrass50" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 162, 128 )
+
+[node name="TallGrass51" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 176, 115 )
+
+[node name="TallGrass52" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 176, 128 )
+
+[node name="TallGrass53" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 162, 141 )
+
+[node name="TallGrass54" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 162, 154 )
+
+[node name="TallGrass55" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 176, 141 )
+
+[node name="TallGrass56" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 176, 154 )
+
+[node name="TallGrass57" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 190, 115 )
+
+[node name="TallGrass58" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 190, 128 )
+
+[node name="TallGrass59" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 204, 115 )
+
+[node name="TallGrass60" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 204, 128 )
+
+[node name="TallGrass61" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 190, 141 )
+
+[node name="TallGrass62" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 190, 154 )
+
+[node name="TallGrass63" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 204, 141 )
+
+[node name="TallGrass64" parent="YSort/Grasses" instance=ExtResource( 1 )]
+position = Vector2( 204, 154 )
+
 [node name="Bat" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 78, 173 )
+position = Vector2( 248, 191 )
 
 [node name="Bat2" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 79, 27 )
 
 [node name="Bat3" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 227, 44 )
+position = Vector2( 341, 34 )
+
+[node name="Wood" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 146, 32 )
+
+[node name="Wood2" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 68, 135 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.141176, 0.129412, 0.129412, 1 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
