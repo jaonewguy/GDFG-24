@@ -1,10 +1,12 @@
 extends KinematicBody2D
 
-var SPEED = 80
+const SPEED = 80
+const MAX_STAMINA = 4
 var ATTACKS = ["Attack1", "Attack2"]
 
 var state_machine
 var velocity = Vector2.ZERO
+var stamina = MAX_STAMINA
 
 func _ready() -> void:
     state_machine = $AnimationTree.get("parameters/playback")
@@ -16,8 +18,10 @@ func _physics_process(delta: float) -> void:
 func get_input() -> void:
 #    var current = state_machine.get_current_node()
     velocity = Vector2.ZERO
-    if Input.is_action_just_pressed("attack"):
+    if Input.is_action_just_pressed("attack") and stamina > 0:
         state_machine.travel(ATTACKS[randi() % 2])
+        stamina -= 1
+        SignalBus.emit_signal("spend_stamina", stamina)
         return
     if Input.is_action_pressed("right"):
         velocity.x += 1

@@ -1,3 +1,4 @@
+class_name TallGrass
 extends Node2D
 
 onready var anim_player = $AnimationPlayer

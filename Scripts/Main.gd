@@ -9,6 +9,7 @@ const L1_TIME_LEFT : int = 19
 onready var level_timer = $HUD/LevelTimer/Timer
 onready var level_timer_label = $HUD/LevelTimer/TimeLeftLabel
 onready var start_button = $HUD/StartButton
+onready var bgm = $BGM
 
 # Time left in stage
 #var time_left = L1_TIME_LEFT
@@ -24,13 +25,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-    print(level_timer.wait_time)
     level_timer_label.text = str(level_timer.get_time_left())
     
 func _on_start_game():
     var level = level_one.instance()
     add_child(level)
     level_timer.start()
+    bgm.play()
 
 # TODO: Refactor
 func _on_StartButton_pressed():

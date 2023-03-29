@@ -14,6 +14,21 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Bat.gd"
 }, {
+"base": "Node2D",
+"class": "HiddenLoot",
+"language": "GDScript",
+"path": "res://Scripts/HiddenLoot.gd"
+}, {
+"base": "Node2D",
+"class": "Stamina",
+"language": "GDScript",
+"path": "res://Scripts/Stamina.gd"
+}, {
+"base": "Node2D",
+"class": "TallGrass",
+"language": "GDScript",
+"path": "res://Scripts/TallGrass.gd"
+}, {
 "base": "Area2D",
 "class": "Wood",
 "language": "GDScript",
@@ -21,6 +36,9 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Bat": "",
+"HiddenLoot": "",
+"Stamina": "",
+"TallGrass": "",
 "Wood": ""
 }
 
