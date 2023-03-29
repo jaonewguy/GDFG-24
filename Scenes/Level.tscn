@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/TallGrass.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Bat.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Wood.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Energy.tscn" type="PackedScene" id=6]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 5 )
@@ -22,6 +23,12 @@ position = Vector2( 180, 23 )
 
 [node name="Wood2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 45, 144 )
+
+[node name="Energy" parent="." instance=ExtResource( 6 )]
+position = Vector2( 48, 93 )
+
+[node name="Energy2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 160, 35 )
 
 [node name="YSort" type="YSort" parent="."]
 

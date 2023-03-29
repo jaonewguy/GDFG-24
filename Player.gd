@@ -10,6 +10,7 @@ var stamina = MAX_STAMINA
 
 func _ready() -> void:
     state_machine = $AnimationTree.get("parameters/playback")
+    SignalBus.connect("energy_pickup", self, "_on_energy_pickup")
 
 func _physics_process(delta: float) -> void:
     get_input()
@@ -58,3 +59,8 @@ func _on_Area2D_body_exited(body: Node) -> void:
     if body is Bat:
         body.get_node("Sprites/OnlyDarkSprite").show()
         body.get_node("Sprites/EnemySprite").hide()
+
+func _on_energy_pickup() -> void:
+    stamina += 1
+    SignalBus.emit_signal("increase_stamina", stamina)
+#    print("Energy picked up! Stamina at: ", stamina)
