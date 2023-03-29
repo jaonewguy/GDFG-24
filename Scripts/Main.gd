@@ -8,6 +8,7 @@ const L1_TIME_LEFT : int = 19
 # var b: String = "text"
 onready var level_timer = $HUD/LevelTimer/Timer
 onready var level_timer_label = $HUD/LevelTimer/TimeLeftLabel
+onready var stamina_bar = $HUD/Stamina
 onready var start_button = $HUD/StartButton
 onready var bgm = $BGM
 

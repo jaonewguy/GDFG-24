@@ -8,5 +8,4 @@ signal wood_pickup
 signal energy_pickup
 
 # Stamina
-signal spend_stamina
-signal increase_stamina
+signal update_stamina

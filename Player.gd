@@ -1,12 +1,11 @@
 extends KinematicBody2D
 
 const SPEED = 80
-const MAX_STAMINA = 4
 var ATTACKS = ["Attack1", "Attack2"]
 
 var state_machine
 var velocity = Vector2.ZERO
-var stamina = MAX_STAMINA
+var stamina: int
 
 func _ready() -> void:
     state_machine = $AnimationTree.get("parameters/playback")
@@ -22,7 +21,7 @@ func get_input() -> void:
     if Input.is_action_just_pressed("attack") and stamina > 0:
         state_machine.travel(ATTACKS[randi() % 2])
         stamina -= 1
-        SignalBus.emit_signal("spend_stamina", stamina)
+        SignalBus.emit_signal("update_stamina", stamina)
         return
     if Input.is_action_pressed("right"):
         velocity.x += 1
@@ -49,6 +48,9 @@ func get_input() -> void:
 #    state_machine.travel("die")
 #    set_physics_process(false)
 
+func set_stamina(player_stamina: int):
+    stamina = player_stamina
+    SignalBus.emit_signal("update_stamina", stamina)
 
 func _on_Area2D_body_entered(body: Node) -> void:
     if body is Bat:
@@ -62,5 +64,5 @@ func _on_Area2D_body_exited(body: Node) -> void:
 
 func _on_energy_pickup() -> void:
     stamina += 1
-    SignalBus.emit_signal("increase_stamina", stamina)
+    SignalBus.emit_signal("update_stamina", stamina)
 #    print("Energy picked up! Stamina at: ", stamina)

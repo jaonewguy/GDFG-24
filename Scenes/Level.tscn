@@ -506,7 +506,6 @@ position = Vector2( 79, 27 )
 position = Vector2( 341, 34 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color( 0.141176, 0.129412, 0.129412, 1 )
 
 [node name="Timer" type="Timer" parent="."]

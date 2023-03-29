@@ -33,7 +33,7 @@ theme = ExtResource( 4 )
 text = "Start"
 
 [node name="Stamina" parent="HUD" instance=ExtResource( 5 )]
-position = Vector2( 405, 218 )
+position = Vector2( 399, 218 )
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )

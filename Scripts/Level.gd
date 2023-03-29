@@ -1,7 +1,9 @@
 extends Node
 
 
-# Declare member variables here. Examples:
+export var MAX_STAMINA = 20
+
+onready var player = $YSort/Player
 var picked_up_wood: int = 0
 var hidden_loot_scene = preload("res://Scenes/HiddenLoot.tscn")
 var wood = preload("res://Scenes/Wood.tscn")
@@ -11,6 +13,7 @@ func _ready() -> void:
     randomize()
     SignalBus.connect("wood_pickup", self, "_on_wood_pickup")
     _spawn_hidden_loot()
+    player.set_stamina(MAX_STAMINA)
 
 func _on_wood_pickup() -> void:
     picked_up_wood += 1
