@@ -13,10 +13,9 @@ script = ExtResource( 5 )
 [node name="BG" type="Node2D" parent="."]
 
 [node name="Ground" type="ColorRect" parent="BG"]
-visible = false
 margin_right = 426.0
 margin_bottom = 241.0
-color = Color( 0.309804, 0.419608, 0.352941, 1 )
+color = Color( 0.137255, 0.176471, 0.145098, 1 )
 
 [node name="Wood" parent="." instance=ExtResource( 4 )]
 position = Vector2( 180, 23 )
@@ -506,6 +505,7 @@ position = Vector2( 79, 27 )
 position = Vector2( 341, 34 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0.141176, 0.129412, 0.129412, 1 )
 
 [node name="Timer" type="Timer" parent="."]

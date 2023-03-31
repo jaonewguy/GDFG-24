@@ -32,14 +32,22 @@ var player_inside: bool = false
 #        get_tree().current_scene.add_child(grass_overlay)
 
 
-func _on_Area2D_body_entered(body: Node) -> void:
+func _create_grass_step_effect():
     anim_player.play("Stepped")
     
     var grass_step_effect = GrassStepEffect.instance()
     grass_step_effect.position = self.position
     get_tree().current_scene.add_child(grass_step_effect)
 
+func _on_Area2D_body_entered(body: Node) -> void:
+    _create_grass_step_effect()
+
 #
 #func _on_Area2D_body_exited(body: Node) -> void:
 #    if is_instance_valid(grass_overlay):
 #        grass_overlay.queue_free()
+
+func _on_Hurtbox_area_entered(area: Area2D) -> void:
+    print("Grass Hurtbox hit")
+    _create_grass_step_effect()
+    queue_free()

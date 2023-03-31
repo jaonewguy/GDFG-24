@@ -7,6 +7,8 @@ var state_machine
 var velocity = Vector2.ZERO
 var stamina: int
 
+onready var hitbox_pivot = $HitboxPivot
+
 func _ready() -> void:
     state_machine = $AnimationTree.get("parameters/playback")
     SignalBus.connect("energy_pickup", self, "_on_energy_pickup")
@@ -26,13 +28,21 @@ func get_input() -> void:
     if Input.is_action_pressed("right"):
         velocity.x += 1
         $Sprite.scale.x = 1
+        hitbox_pivot.position *= Vector2($Sprite.scale.x, 1)     
     if Input.is_action_pressed("left"):
         velocity.x -= 1
         $Sprite.scale.x = -1
+        hitbox_pivot.position *= Vector2($Sprite.scale.x, 1) 
     if Input.is_action_pressed("up"):
         velocity.y -= 1
     if Input.is_action_pressed("down"):
         velocity.y += 1
+    
+       
+#    if Input.is_action_just_pressed("right"):
+#        hitbox_pivot.position *= Vector2(1,1)
+#    if Input.is_action_just_pressed("left"):
+#        hitbox_pivot.position *= Vector2(-1,1)
         
     velocity = velocity.normalized() * SPEED
     
