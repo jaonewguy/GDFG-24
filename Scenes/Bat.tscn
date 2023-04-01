@@ -62,10 +62,10 @@ visible = false
 show_behind_parent = true
 frames = SubResource( 6 )
 animation = "Fly"
-frame = 4
+frame = 2
 playing = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="BatBodyCollision" type="CollisionShape2D" parent="."]
 shape = SubResource( 7 )
 
 [node name="PlayerDetectionZone" type="Area2D" parent="."]

@@ -27,12 +27,14 @@ func get_input() -> void:
         return
     if Input.is_action_pressed("right"):
         velocity.x += 1
-        $Sprite.scale.x = 1
-        hitbox_pivot.position *= Vector2($Sprite.scale.x, 1)     
+        $CharPivot.scale.x = 1
+#        $Sprite.scale.x = 1
+#        hitbox_pivot.position *= Vector2($Sprite.scale.x, 1)     
     if Input.is_action_pressed("left"):
         velocity.x -= 1
-        $Sprite.scale.x = -1
-        hitbox_pivot.position *= Vector2($Sprite.scale.x, 1) 
+#        $Sprite.scale.x = -1
+#        hitbox_pivot.position *= Vector2($Sprite.scale.x, 1) 
+        $CharPivot.scale.x = -1
     if Input.is_action_pressed("up"):
         velocity.y -= 1
     if Input.is_action_pressed("down"):
