@@ -1,7 +1,7 @@
 extends Node2D
 
 
-const L1_TIME_LEFT : int = 19
+const L1_TIME_LEFT : int = 120
 
 # Declare member variables here. Examples:
 # var a: int = 2

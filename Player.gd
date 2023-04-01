@@ -78,3 +78,7 @@ func _on_energy_pickup() -> void:
     stamina += 1
     SignalBus.emit_signal("update_stamina", stamina)
 #    print("Energy picked up! Stamina at: ", stamina)
+
+
+func _on_Hurtbox_area_entered(area):
+    queue_free()
