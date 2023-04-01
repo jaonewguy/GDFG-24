@@ -64,3 +64,7 @@ func update_wander():
 #    print("Entered update_wander")
     state = pick_random_state([IDLE, WANDER])
     wander_controller.start_wander_timer(rand_range(1, 3))
+
+
+func _on_Bat_Hurtbox_area_entered(area):
+    queue_free()

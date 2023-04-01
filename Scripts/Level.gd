@@ -20,9 +20,13 @@ func _ready() -> void:
     
 func _setup_bats() -> void:
     var num_bats : int = bats.get_child_count()
+    
     var boss_bat : Node = get_node("YSort/Bats/Bat" + str(randi() % num_bats))
-    boss_bat.get_node("Sprites/EnemySprite").apply_scale(Vector2(3,3))
+    var boss_bat_sprite = boss_bat.get_node("Sprites/EnemySprite")
+    boss_bat_sprite.apply_scale(Vector2(3,3))
+    boss_bat_sprite.modulate = Color(0.862745, 0.0784314, 0.235294, 1)
     boss_bat.get_node("BatBodyCollision").apply_scale(Vector2(3,3))
+    boss_bat.get_node("Hurtbox").queue_free()
     
 
 func _on_wood_pickup() -> void:
