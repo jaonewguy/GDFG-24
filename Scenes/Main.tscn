@@ -8,7 +8,6 @@
 [ext_resource path="res://Assets/theme/font/m5x7.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="DynamicFont" id=1]
-size = 24
 font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -54,8 +53,10 @@ margin_bottom = 180.0
 custom_fonts/font = SubResource( 1 )
 text = "- Red eyes signify mobs. Avoid the Big
 Bat; small bats are killable
-- Cut the grass, collect 3 wood 
-to win
+- Cut the grass, collect 10 wood 
+to win. Some are hidden.
+- Limited Stamina, use it wisely. 
+Yellow pots refill.
 - L. Click, Z, or J to attack
 - WASD to move
 "

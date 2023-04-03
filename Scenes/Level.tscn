@@ -19,7 +19,13 @@ margin_bottom = 241.0
 color = Color( 0.137255, 0.176471, 0.145098, 1 )
 
 [node name="Wood" parent="." instance=ExtResource( 4 )]
-position = Vector2( 180, 23 )
+position = Vector2( 292, 18 )
+
+[node name="Wood2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 54, 23 )
+
+[node name="Wood3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 359, 197 )
 
 [node name="Energy" parent="." instance=ExtResource( 6 )]
 position = Vector2( 48, 93 )

@@ -3,6 +3,7 @@ extends Node2D
 # Time left in stage
 const L1_TIME_LEFT : int = 120
 const GAME_OVER_TIMEOUT : int = 3
+const NUM_WOOD_TO_WIN : int = 10
 
 # Declare member variables here. Examples:
 # var a: int = 2
@@ -61,7 +62,7 @@ func _on_wood_pickup() -> void:
     print("Wood picked up")
     picked_up_wood += 1
     wood_count.text = str(picked_up_wood)
-    if picked_up_wood == 3:
+    if picked_up_wood == NUM_WOOD_TO_WIN:
         SignalBus.emit_signal("game_won")
 
 # TODO: Refactor
