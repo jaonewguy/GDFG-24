@@ -7,14 +7,12 @@ export var MAX_STAMINA = 30
 onready var player = $YSort/Player
 onready var bats = $YSort/Bats
 
-var picked_up_wood: int = 0
 var hidden_loot_scene = preload("res://Scenes/HiddenLoot.tscn")
 var wood = preload("res://Scenes/Wood.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
     randomize()
-    SignalBus.connect("wood_pickup", self, "_on_wood_pickup")
     _spawn_hidden_loot()
     player.set_stamina(MAX_STAMINA)
     _setup_bats()
@@ -29,12 +27,6 @@ func _setup_bats() -> void:
     boss_bat.get_node("BatBodyCollision").apply_scale(Vector2(3,3))
     boss_bat.get_node("Hurtbox").queue_free()
     
-
-func _on_wood_pickup() -> void:
-    print("Wood picked up")
-    picked_up_wood += 1
-    if picked_up_wood == 3:
-        SignalBus.emit_signal("game_won")
 
 func _spawn_hidden_loot() -> void:
     var loot = hidden_loot_scene.instance()
@@ -53,6 +45,10 @@ func _spawn_hidden_loot() -> void:
     var wood_piece2 = wood.instance()
 #    wood_piece.hide()
 #    wood_piece2.hide()
+    wood_piece.z_index = -1
+    wood_piece2.z_index = -1
+    wood_piece.disable_light_radius()
+    wood_piece2.disable_light_radius()
     loot.add_child(wood_piece)
     loot2.add_child(wood_piece2)
     print("Loot added at: ", loot.global_position)

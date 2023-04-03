@@ -11,6 +11,7 @@
 script = ExtResource( 5 )
 
 [node name="BG" type="Node2D" parent="."]
+z_index = -2
 
 [node name="Ground" type="ColorRect" parent="BG"]
 margin_right = 426.0
@@ -19,9 +20,6 @@ color = Color( 0.137255, 0.176471, 0.145098, 1 )
 
 [node name="Wood" parent="." instance=ExtResource( 4 )]
 position = Vector2( 180, 23 )
-
-[node name="Wood2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 45, 144 )
 
 [node name="Energy" parent="." instance=ExtResource( 6 )]
 position = Vector2( 48, 93 )

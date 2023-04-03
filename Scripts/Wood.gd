@@ -13,3 +13,6 @@ func _ready() -> void:
 func _on_Wood_body_entered(body: Node) -> void:
     SignalBus.emit_signal("wood_pickup")
     queue_free()
+
+func disable_light_radius() -> void:
+    $Light2D.set_enabled(false)
