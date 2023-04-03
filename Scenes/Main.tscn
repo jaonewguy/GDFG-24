@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Chrono_Trigger_In_the_Green_Gloom_OC_ReMix.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Scenes/LevelTimer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=3]
 [ext_resource path="res://Assets/theme/kenneyUI-green.tres" type="Theme" id=4]
 [ext_resource path="res://Scenes/Stamina.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/theme/font/m5x7.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 6 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
@@ -34,6 +39,18 @@ text = "Start"
 
 [node name="Stamina" parent="HUD" instance=ExtResource( 5 )]
 position = Vector2( 399, 218 )
+
+[node name="GameInfo" type="Label" parent="HUD"]
+margin_left = 97.0
+margin_top = 48.0
+margin_right = 305.0
+margin_bottom = 132.0
+custom_fonts/font = SubResource( 1 )
+text = "- Avoid the Big Bat
+- Collect all the wood
+- L. Click, Z, or J to attack
+- WASD to move
+"
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )

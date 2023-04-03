@@ -82,3 +82,4 @@ func _on_energy_pickup() -> void:
 
 func _on_Hurtbox_area_entered(area):
     queue_free()
+    SignalBus.emit_signal("game_over")
