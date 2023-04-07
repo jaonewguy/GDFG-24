@@ -2,7 +2,7 @@ class_name TallGrass
 extends Node2D
 
 onready var anim_player = $AnimationPlayer
-const grass_overlay_texture = preload("res://Assets/Grass/stepped_tall_grass.png")
+const grass_overlay_texture = preload("res://Assets/grass/stepped_tall_grass.png")
 const GrassStepEffect = preload("res://Scenes/GrassStepEffect.tscn")
 var grass_overlay: TextureRect = null
 
