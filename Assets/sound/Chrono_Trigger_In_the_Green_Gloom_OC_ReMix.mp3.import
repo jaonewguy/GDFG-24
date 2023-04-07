@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Chrono_Trigger_In_the_Green_Gloom_OC_ReMix.mp3-2dde1f6972f00c75f7d72437e45c3bbc.mp3str"
+
+[deps]
+
+source_file="res://Assets/sound/Chrono_Trigger_In_the_Green_Gloom_OC_ReMix.mp3"
+dest_files=[ "res://.import/Chrono_Trigger_In_the_Green_Gloom_OC_ReMix.mp3-2dde1f6972f00c75f7d72437e45c3bbc.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
