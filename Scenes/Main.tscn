@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Chrono_Trigger_In_the_Green_Gloom_OC_ReMix.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Assets/sound/Chrono_Trigger_In_the_Green_Gloom_OC_ReMix.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Scenes/LevelTimer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=3]
 [ext_resource path="res://Assets/theme/kenneyUI-green.tres" type="Theme" id=4]
